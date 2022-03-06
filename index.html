@@ -3,11 +3,34 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
-        <script src="javascript.js"></script>
-    <title>Rock, Paper, Scissors</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RPS</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,700;1,100&display=swap" rel="stylesheet">
 </head>
 <body>
-    
+    <div class="header">Rock, Paper, Scissors</div>
+    <div class = "topContainer">
+        <div class = "pside">Player
+            <div class = "box">
+                <div id = "playerChoice"></div>
+            </div>
+        </div>
+        <div class = "cside">Computer
+            <div class = "box">
+                <div id = "computerChoice"></div>
+            </div>
+        </div>
+    </div>
+    <div>Result: <span id = "result"></span></div>
+    <div>Player score: <span id = "playerScore"></span></div>
+    <div>Computer score: <span id = "computerScore"></span></div>
+    <button class="btn" data-selection="rock">Rock</button>
+    <button class="btn" data-selection="paper">Paper</button>
+    <button class="btn" data-selection="scissors">Scissors</button>
+
+    <script src="javascript.js"></script>
 </body>
 </html>
