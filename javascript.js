@@ -6,6 +6,7 @@ const result = document.getElementById("result")
 const playerScoreCum = document.getElementById("playerScore")
 const computerScoreCum = document.getElementById("computerScore")
 const finalResult = document.getElementById("finalResult")
+const modal_container = document.getElementById("modal_container")
 
 let playerSelection
 let computerSelection
@@ -76,7 +77,7 @@ function gameEnd () {
     if (playerScore === 5 || computerScore === 5) {
         playerScore = 0;
         computerScore = 0
-        finalResult.textContent = "You win!"
+        modal_container.classList.add('show')
     }
 
 }
