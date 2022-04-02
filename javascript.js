@@ -7,7 +7,10 @@ const playerScoreCum = document.getElementById("playerScore")
 const computerScoreCum = document.getElementById("computerScore")
 const finalResult = document.getElementById("finalResult")
 const modal_container = document.getElementById("modal_container")
-
+const whoWon = document.getElementById("who-won")
+const gameOverComputerScore = document.getElementById("gameover-computer-score")
+const gameOverPlayerScore = document.getElementById("gameover-player-score")
+const playAgain = document.getElementById("play-again")
 let playerSelection
 let computerSelection
 let results
@@ -21,6 +24,9 @@ possibleChoices.forEach(possibleChoice => possibleChoice.addEventListener('click
     keepScore();
     gameEnd();
 }))
+
+playerScoreCum.textContent = playerScore
+        computerScoreCum.textContent = computerScore
 
 function computerPlay () {
     let computerOptions = ["rock", "paper", "scissors"];
@@ -74,13 +80,37 @@ function keepScore () {
 
 
 function gameEnd () {
-    if (playerScore === 5 || computerScore === 5) {
-        playerScore = 0;
-        computerScore = 0
+    if (playerScore === 5) {
+        whoWon.textContent = "You win!";
+        gameOverComputerScore.textContent = `Computer: ${computerScore}`;
+        gameOverPlayerScore.textContent = `Player: ${playerScore}`;
         modal_container.classList.add('show')
+        playerScore = 0
+        computerScore = 0
+        playerScoreCum.textContent = playerScore
+        computerScoreCum.textContent = computerScore
+        result.textContent = ""
+        computerChoice.textContent = ""
+        playerChoice.textContent = ""
+    } else if (computerScore === 5) {
+        whoWon.textContent = "You lose!";
+        gameOverComputerScore.textContent = `Computer: ${computerScore}`;
+        gameOverPlayerScore.textContent = `Player: ${playerScore}`;
+        modal_container.classList.add('show') 
+        playerScore = 0
+        computerScore = 0
+        playerScoreCum.textContent = playerScore
+        computerScoreCum.textContent = computerScore
+        result.textContent = ""
+        computerChoice.textContent = ""
+        playerChoice.textContent = ""
     }
 
 }
+
+playAgain.addEventListener('click', () => {
+    modal_container.classList.remove("show")
+})
 
 
 
